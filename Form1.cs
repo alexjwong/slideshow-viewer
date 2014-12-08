@@ -15,6 +15,23 @@ namespace slide_show_viewer
         public Form1()
         {
             InitializeComponent();
+
+            // Make the file dialog FileName default to blank (on first open)
+            openFileDialog1.FileName = "";
+        }
+
+        private void AddFilesButton_Click(object sender, EventArgs e)
+        {
+            // Set filter options and filter index.
+            openFileDialog1.Filter = "Image Files (*.jpg; *.gif; *.png; *.bmp)|*.jpg; *.gif; *.png; *.bmp|All Files (*.*)|*.*";
+            openFileDialog1.FilterIndex = 1;
+
+            // Use openFileDialog tool (in designer) to create openFileDialog1
+            if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
+            {
+
+            }
+            this.Invalidate();
         }
     }
 }
