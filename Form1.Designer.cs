@@ -38,7 +38,7 @@
             this.DeleteFilesButton = new System.Windows.Forms.Button();
             this.AddFilesButton = new System.Windows.Forms.Button();
             this.ShowButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.IntervalTextBox = new System.Windows.Forms.TextBox();
             this.IntervalLabel = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
@@ -88,6 +88,7 @@
             this.FileNameListBox.FormattingEnabled = true;
             this.FileNameListBox.Location = new System.Drawing.Point(12, 28);
             this.FileNameListBox.Name = "FileNameListBox";
+            this.FileNameListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.FileNameListBox.Size = new System.Drawing.Size(510, 69);
             this.FileNameListBox.TabIndex = 1;
             // 
@@ -110,6 +111,7 @@
             this.DeleteFilesButton.TabIndex = 1;
             this.DeleteFilesButton.Text = "Delete";
             this.DeleteFilesButton.UseVisualStyleBackColor = true;
+            this.DeleteFilesButton.Click += new System.EventHandler(this.DeleteFilesButton_Click);
             // 
             // AddFilesButton
             // 
@@ -129,13 +131,15 @@
             this.ShowButton.TabIndex = 3;
             this.ShowButton.Text = "Show";
             this.ShowButton.UseVisualStyleBackColor = true;
+            this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
             // 
-            // textBox1
+            // IntervalTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(396, 203);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(42, 20);
-            this.textBox1.TabIndex = 4;
+            this.IntervalTextBox.Location = new System.Drawing.Point(396, 203);
+            this.IntervalTextBox.Name = "IntervalTextBox";
+            this.IntervalTextBox.Size = new System.Drawing.Size(42, 20);
+            this.IntervalTextBox.TabIndex = 4;
+            this.IntervalTextBox.TextChanged += new System.EventHandler(this.IntervalTextBox_TextChanged);
             // 
             // IntervalLabel
             // 
@@ -149,6 +153,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Multiselect = true;
             // 
             // Form1
             // 
@@ -156,7 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 262);
             this.Controls.Add(this.IntervalLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.IntervalTextBox);
             this.Controls.Add(this.ShowButton);
             this.Controls.Add(this.FilesGroupBox);
             this.Controls.Add(this.FileNameListBox);
@@ -184,7 +189,7 @@
         private System.Windows.Forms.Button DeleteFilesButton;
         private System.Windows.Forms.Button AddFilesButton;
         private System.Windows.Forms.Button ShowButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox IntervalTextBox;
         private System.Windows.Forms.Label IntervalLabel;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }

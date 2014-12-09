@@ -29,9 +29,33 @@ namespace slide_show_viewer
             // Use openFileDialog tool (in designer) to create openFileDialog1
             if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
-
+                // Add the file(s) selected in the openFileDialog tool to the FileNameListBox
+                foreach (string FileName in openFileDialog1.FileNames)
+                {
+                    FileNameListBox.Items.Add(FileName);
+                }
             }
             this.Invalidate();
         }
+
+        private void DeleteFilesButton_Click(object sender, EventArgs e)
+        {
+            // Remove the currently selected file(s).
+            for (int i = FileNameListBox.Items.Count - 1; i >= 0; i--)
+            {
+                FileNameListBox.Items.RemoveAt(i);
+            }
+        }
+
+        private void ShowButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void IntervalTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
