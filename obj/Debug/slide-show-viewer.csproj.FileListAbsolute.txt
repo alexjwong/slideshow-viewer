@@ -7,3 +7,4 @@ c:\users\alex\documents\visual studio 2013\Projects\slide-show-viewer\obj\Debug\
 c:\users\alex\documents\visual studio 2013\Projects\slide-show-viewer\obj\Debug\slide-show-viewer.csproj.GenerateResource.Cache
 c:\users\alex\documents\visual studio 2013\Projects\slide-show-viewer\obj\Debug\slide-show-viewer.exe
 c:\users\alex\documents\visual studio 2013\Projects\slide-show-viewer\obj\Debug\slide-show-viewer.pdb
+c:\users\alex\documents\visual studio 2013\Projects\slide-show-viewer\obj\Debug\slide_show_viewer.ViewerForm.resources
