@@ -28,7 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.intervalTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // intervalTimer
+            // 
+            this.intervalTimer.Tick += new System.EventHandler(this.intervalTimer_Tick);
             // 
             // ViewerForm
             // 
@@ -39,11 +45,15 @@
             this.ShowInTaskbar = false;
             this.Text = "ViewerForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Activated += new System.EventHandler(this.ViewerForm_Activated);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ViewerForm_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ViewerForm_KeyDown);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer intervalTimer;
     }
 }

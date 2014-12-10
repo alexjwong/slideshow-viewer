@@ -14,7 +14,7 @@ namespace slide_show_viewer
     {
 
         // Holds the current slide show interval
-        int CurrentInterval;
+        public int CurrentInterval;
 
         public Form1()
         {
@@ -52,21 +52,36 @@ namespace slide_show_viewer
 
         private void ShowButton_Click(object sender, EventArgs e)
         {
-            ViewerForm VForm = new ViewerForm();
-            VForm.Show();
-        }
-
-        private void IntervalTextBox_TextChanged(object sender, EventArgs e)
-        {
-            // Set the value in the IntervalTextBox to the program's current interval
-            // If its not an integer, interval is back to 5 (and doesn't throw and exception)
-            int x;
-            if (Int32.TryParse(IntervalTextBox.Text, out x))
+            // If no items in list, show error message
+            if (FileNameListBox.Items.Count == 0)
             {
-                CurrentInterval = x;
+                MessageBox.Show("No images to show.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
             }
-            else CurrentInterval = 5; // Default if integer box not filled with int
-            this.Invalidate();
+
+            try
+            {
+                // Set the value in the IntervalTextBox to the program's current interval
+                CurrentInterval = Int32.Parse(IntervalTextBox.Text);
+
+                if (this.CurrentInterval <= 0)
+                {
+                    throw new Exception("Please enter an integer time interval > 0");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please enter an integer time interval > 0",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Hand);
+                return;
+            }
+
+            // Create new ViewerForm, *important* - Owner is this!!
+            ViewerForm VForm = new ViewerForm { Owner = this };
+            // Show as modal window
+            VForm.ShowDialog();
         }
 
         private void openCollectionToolStripMenuItem_Click(object sender, EventArgs e)

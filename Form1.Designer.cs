@@ -142,7 +142,6 @@
             this.IntervalTextBox.Name = "IntervalTextBox";
             this.IntervalTextBox.Size = new System.Drawing.Size(42, 20);
             this.IntervalTextBox.TabIndex = 4;
-            this.IntervalTextBox.TextChanged += new System.EventHandler(this.IntervalTextBox_TextChanged);
             // 
             // IntervalLabel
             // 
@@ -187,7 +186,7 @@
         private System.Windows.Forms.ToolStripMenuItem openCollectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveCollectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.ListBox FileNameListBox;
+        public System.Windows.Forms.ListBox FileNameListBox;    // Needs to be accessible from ViewerForm
         private System.Windows.Forms.GroupBox FilesGroupBox;
         private System.Windows.Forms.Button DeleteFilesButton;
         private System.Windows.Forms.Button AddFilesButton;
