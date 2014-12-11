@@ -40,7 +40,9 @@
             this.ShowButton = new System.Windows.Forms.Button();
             this.IntervalTextBox = new System.Windows.Forms.TextBox();
             this.IntervalLabel = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.addOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.collectionOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.collectionSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.FilesGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -69,21 +71,21 @@
             // 
             this.openCollectionToolStripMenuItem.Name = "openCollectionToolStripMenuItem";
             this.openCollectionToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.openCollectionToolStripMenuItem.Text = "Open Collection";
+            this.openCollectionToolStripMenuItem.Text = "&Open Collection";
             this.openCollectionToolStripMenuItem.Click += new System.EventHandler(this.openCollectionToolStripMenuItem_Click);
             // 
             // saveCollectionToolStripMenuItem
             // 
             this.saveCollectionToolStripMenuItem.Name = "saveCollectionToolStripMenuItem";
             this.saveCollectionToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.saveCollectionToolStripMenuItem.Text = "Save Collection";
+            this.saveCollectionToolStripMenuItem.Text = "&Save Collection";
             this.saveCollectionToolStripMenuItem.Click += new System.EventHandler(this.saveCollectionToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // FileNameListBox
@@ -152,10 +154,9 @@
             this.IntervalLabel.TabIndex = 5;
             this.IntervalLabel.Text = "Interval";
             // 
-            // openFileDialog1
+            // addOpenFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Multiselect = true;
+            this.addOpenFileDialog.Multiselect = true;
             // 
             // Form1
             // 
@@ -193,7 +194,9 @@
         private System.Windows.Forms.Button ShowButton;
         private System.Windows.Forms.TextBox IntervalTextBox;
         private System.Windows.Forms.Label IntervalLabel;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog addOpenFileDialog;
+        private System.Windows.Forms.OpenFileDialog collectionOpenFileDialog;
+        private System.Windows.Forms.SaveFileDialog collectionSaveFileDialog;
     }
 }
 

@@ -30,7 +30,6 @@ namespace slide_show_viewer
             {
                 this.Close();
             }
-            this.Invalidate();
         }
 
         private void ViewerForm_Paint(object sender, PaintEventArgs e)
@@ -60,11 +59,12 @@ namespace slide_show_viewer
                 Console.WriteLine(currentIndex);
                 
                 // Draw the image fullscreen, retaining aspect ratio
-                graphics.DrawImage(image, (sizeF.Width - (float)width * num) / 2f, (sizeF.Height - (float)height * num) / 2f, (float)width * num, (float)height * num);
+                graphics.DrawImage(image, (sizeF.Width - (float)width * num) / 2, (sizeF.Height - (float)height * num) / 2, (float)width * num, (float)height * num);
             }
             catch
             {
-                graphics.DrawString("Not an image file!", new Font("Arial", 24f), Brushes.Red, 20f, 20f);
+                // Failing to load an image
+                graphics.DrawString("Not an image file!", new Font("Arial", 24), Brushes.Red, 20, 20);
             }
         }
 
