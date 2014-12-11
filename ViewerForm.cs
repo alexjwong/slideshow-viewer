@@ -72,7 +72,7 @@ namespace slide_show_viewer
         {
             Form1 mainForm = (Form1)base.Owner;
 
-            // Get interval from the main form and translate to minutes
+            // Get interval from the main form and translate to seconds
             this.intervalTimer.Interval = mainForm.CurrentInterval * 1000;
 
             // Enable the timer

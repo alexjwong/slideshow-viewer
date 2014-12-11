@@ -56,7 +56,11 @@ namespace slide_show_viewer
             // Must iterate backwards so as to keep indexes consistent through the deletion process
             for (int i = FileNameListBox.Items.Count - 1; i >= 0; i--)
             {
-                FileNameListBox.Items.RemoveAt(i);
+                if (FileNameListBox.SelectedIndices.Contains(i))
+                {
+                    FileNameListBox.Items.RemoveAt(i);
+                }
+                
             }
             this.Invalidate();
         }
